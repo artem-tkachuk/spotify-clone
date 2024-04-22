@@ -5,7 +5,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 const Library = () => {
     const onClick = () => {
-        // Handle song upload
+        // TODO Handle song upload
         alert('Song uploaded!')
     }
 
