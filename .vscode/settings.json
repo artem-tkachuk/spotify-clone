@@ -6,6 +6,7 @@
         "Polyfi",
         "Polyfy",
         "Supa",
-        "supabase"
+        "supabase",
+        "zustand"
     ]
 }
