@@ -9,6 +9,7 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { toast } from "react-hot-toast";
 
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
@@ -30,11 +31,14 @@ const Header: React.FC<HeaderProps> = ({
 
     const handleLogout = async () => {
         const { error } = await supabaseClient.auth.signOut();
+        
         // TODO: reset any playing songs
         router.refresh();
+
         if (error) {
-            // TODO: create a toast component for this error
-            console.error("Error signing out:", error);
+            toast.error(error.message);
+        } else {
+            toast.success("You are now logged out!");
         }
     }
 
