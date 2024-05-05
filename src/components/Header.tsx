@@ -7,6 +7,7 @@ import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface HeaderProps {
     children: ReactNode;
@@ -17,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({
     children,
     className
 }) => {
+    const { onOpen } = useAuthModal();
     const router = useRouter();
 
     const handleLogout = () => {
@@ -58,8 +60,7 @@ const Header: React.FC<HeaderProps> = ({
                             justify-center
                             hover:opacity-75
                             transition
-                        "
-                    >
+                    ">
                         <RxCaretLeft className="text-white" size={35}/>
                     </button>
                     {/* Right button */}
@@ -75,8 +76,7 @@ const Header: React.FC<HeaderProps> = ({
                             justify-center
                             hover:opacity-75
                             transition
-                        "
-                    >
+                    ">
                         <RxCaretRight className="text-white" size={35}/>
                     </button>
                 </div>
@@ -98,8 +98,7 @@ const Header: React.FC<HeaderProps> = ({
                             justify-center
                             hover:opacity-75
                             transition
-                        "
-                    >
+                    ">
                         <HiHome className="text-black" size={20}/>
                     </button>
                     <button
@@ -114,8 +113,7 @@ const Header: React.FC<HeaderProps> = ({
                             justify-center
                             hover:opacity-75
                             transition
-                        "
-                    >
+                    ">
                         <BiSearch className="text-black" size={20}/>
                     </button>
                 </div>
@@ -129,26 +127,24 @@ const Header: React.FC<HeaderProps> = ({
                         {/* Sign up button */}
                         <div>
                             <Button
-                                onClick={() => {}}
+                                onClick={onOpen}
                                 className="
                                     bg-transparent
                                     text-neutral-300
                                     font-medium
-                                "
-                            >
+                            ">
                                 Sign up
                             </Button>
                         </div>
                         {/* Log in button */}
                         <div>
                             <Button
-                                onClick={() => {}}
+                                onClick={onOpen}
                                 className="
                                     bg-white
                                     px-6
                                     py-2
-                                "
-                            >
+                            ">
                                 Log in
                             </Button>
                         </div>
