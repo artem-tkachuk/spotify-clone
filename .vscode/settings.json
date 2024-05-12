@@ -6,6 +6,9 @@
         "Polyfi",
         "Polyfy",
         "Supa",
-        "supabase"
+        "supabase",
+        "uniqid",
+        "upsert",
+        "zustand"
     ]
 }
